@@ -16,7 +16,7 @@ import { unified } from 'unified'
 import { removePosition } from 'unist-util-remove-position'
 import { provide, shallowRef, watch } from 'vue'
 import type { Nodes } from 'hast'
-import AnimateToken from './AnimateToken.vue'
+import AnimateToken from './AnimationToken.vue'
 
 
 type Props = {

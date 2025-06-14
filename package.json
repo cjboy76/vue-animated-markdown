@@ -1,27 +1,38 @@
 {
-  "name": "vue-token",
-  "private": true,
+  "name": "vue-animation-markdown",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/vue-animation-markdown.umd.cjs",
+  "module": "./dist/vue-animation-markdown.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-animation-markdown.js",
+      "require": "./dist/vue-animation-markdown.umd.cjs"
+    }
+  },
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "build": "rm -r dist && vue-tsc -b && vite build"
   },
   "dependencies": {
+    "vite": "^6.3.5",
     "vue": "^3.5.13"
   },
   "devDependencies": {
     "@types/hast": "^3.0.4",
-    "@vitejs/plugin-vue": "^5.2.3",
+    "@types/node": "^24.0.1",
+    "@vitejs/plugin-vue": "^5.2.4",
     "@vue/tsconfig": "^0.7.0",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
     "typescript": "~5.8.3",
     "unified": "^11.0.5",
     "unist-util-remove-position": "^5.0.0",
-    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4",
     "vue-tsc": "^2.2.8"
   },
-  "packageManager": "pnpm@9.15.3+sha512.1f79bc245a66eb0b07c5d4d83131240774642caaa86ef7d0434ab47c0d16f66b04e21e0c086eb61e62c77efc4d7f7ec071afad3796af64892fae66509173893a"
+  "packageManager": "pnpm@9.15.3"
 }

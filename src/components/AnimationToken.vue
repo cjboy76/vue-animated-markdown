@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import type { Nodes } from 'hast';
 import { computed, inject } from 'vue';
-import { providerSymbol, type AnimationMarkdownContext } from './AnimateMarkdown.vue';
+import { providerSymbol, type AnimationMarkdownContext } from './AnimationMarkdown.vue';
 
 interface Props {
     data: Nodes | undefined
