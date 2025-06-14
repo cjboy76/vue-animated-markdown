@@ -1,6 +1,10 @@
 <script lang='ts'>
 type Seperator = 'word' | 'character'
 
+defineOptions({
+  name: 'AnimationMarkdown'
+})
+
 export type AnimationMarkdownContext = {
   seperator: Seperator
   transition: string
@@ -22,8 +26,7 @@ import AnimateToken from './AnimationToken.vue'
 type Props = {
   content: string,
   seperator?: Seperator
-  animationDuration?: string
-  transition?: string
+  transition: string
 }
 
 defineOptions({
@@ -42,9 +45,8 @@ async function transformAst(input: string) {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  animationDuration: '1s',
   seperator: 'word',
-  transition: 'fade-in'
+  transition: ''
 })
 
 provide<AnimationMarkdownContext>(providerSymbol, {
@@ -60,19 +62,7 @@ watch(() => props.content, async (content) => {
 </script>
 
 <template>
-  <div :style='{ "--streaming-animation-duration": animationDuration }'>
+  <div>
     <AnimateToken :data='root' />
   </div>
 </template>
-
-<style>
-.fade-in-move,
-.fade-in-enter-active {
-  transition: all var(--streaming-animation-duration) ease;
-}
-
-.fade-in-enter-from {
-  opacity: 0;
-  transform: translateY(10px);
-}
-</style>
