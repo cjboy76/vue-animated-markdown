@@ -15,7 +15,7 @@
     }
   },
   "scripts": {
-    "build": "rm -r dist && vue-tsc -b && vite build"
+    "build": "rm -rf dist && vue-tsc -b && vite build"
   },
   "dependencies": {
     "vite": "^6.3.5",
