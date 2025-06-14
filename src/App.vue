@@ -17,26 +17,52 @@
       <StreamingMarkdown
         :content="markdownContent"
         :streaming="streaming"
-        ref="streamingMarkdown"
+        animation-duration='1s'
       />
     </div>
   </div>
 </template>
 
 <script lang='ts'>
-import StreamingMarkdown from './components/StreamingMarkdown.vue'
+import StreamingMarkdown from './components/AnimateMarkdown.vue'
 
 
 const llmResponse = `
-# 關於 Vue.js 的介紹
+# Pluto
 
-Vue.js 是一個**漸進式**的 JavaScript 框架，用於構建用戶界面。
+**Pluto** (minor-planet designation: *134340 Pluto*)
+is a
+[dwarf planet](https://en.wikipedia.org/wiki/Dwarf_planet)
+in the
+[Kuiper belt](https://en.wikipedia.org/wiki/Kuiper_belt).
 
-## 主要特點
+## History
 
-- **響應式數據綁定**：自動追蹤依賴關係
-- **組件化開發**：可複用的 UI 組件
-- **虛擬 DOM**：高效的更新機制
+In the 1840s,
+[Urbain Le Verrier](https://wikipedia.org/wiki/Urbain_Le_Verrier)
+used Newtonian mechanics to predict the position of the
+then-undiscovered planet
+[Neptune](https://wikipedia.org/wiki/Neptune)
+after analyzing perturbations in the orbit of
+[Uranus](https://wikipedia.org/wiki/Uranus).
+
+***
+
+Just a link: www.nasa.gov.
+
+* Lists
+* [ ] todo
+* [x] done
+
+A table:
+
+| a | b |
+| - | - |
+
+<details><summary>Show example</summary>
+
+
+</details>
 
 `
 
@@ -66,7 +92,7 @@ export default {
         } else {
           clearInterval(interval)
         }
-      }, 100) // 每 20ms 添加一個字符
+      }, 10) // 每 20ms 添加一個字符
     },
   },
 
