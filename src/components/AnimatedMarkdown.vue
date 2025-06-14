@@ -1,10 +1,6 @@
 <script lang='ts'>
 type Seperator = 'word' | 'character'
 
-defineOptions({
-  name: 'AnimatedMarkdown'
-})
-
 export type AnimatedMarkdownContext = {
   seperator: Seperator
   transition: string
