@@ -1,17 +1,17 @@
 {
-  "name": "vue-animation-markdown",
+  "name": "vue-animated-markdown",
   "private": false,
   "version": "0.0.0",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/vue-animation-markdown.umd.cjs",
-  "module": "./dist/vue-animation-markdown.js",
+  "main": "./dist/vue-animated-markdown.umd.cjs",
+  "module": "./dist/vue-animated-markdown.js",
   "exports": {
     ".": {
-      "import": "./dist/vue-animation-markdown.js",
-      "require": "./dist/vue-animation-markdown.umd.cjs"
+      "import": "./dist/vue-animated-markdown.js",
+      "require": "./dist/vue-animated-markdown.umd.cjs"
     }
   },
   "scripts": {

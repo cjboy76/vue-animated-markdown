@@ -1,3 +1,3 @@
-import AnimateMarkdown from "./components/AnimationMarkdown.vue";
+import AnimatedMarkdown from "./components/AnimatedMarkdown.vue";
 
-export { AnimateMarkdown }
+export { AnimatedMarkdown }

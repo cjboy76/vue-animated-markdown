@@ -2,10 +2,10 @@
 type Seperator = 'word' | 'character'
 
 defineOptions({
-  name: 'AnimationMarkdown'
+  name: 'AnimatedMarkdown'
 })
 
-export type AnimationMarkdownContext = {
+export type AnimatedMarkdownContext = {
   seperator: Seperator
   transition: string
 }
@@ -20,7 +20,7 @@ import { unified } from 'unified'
 import { removePosition } from 'unist-util-remove-position'
 import { provide, shallowRef, watch } from 'vue'
 import type { Nodes } from 'hast'
-import AnimateToken from './AnimationToken.vue'
+import AnimateToken from './AnimatedToken.vue'
 
 
 type Props = {
@@ -49,7 +49,7 @@ const props = withDefaults(defineProps<Props>(), {
   transition: ''
 })
 
-provide<AnimationMarkdownContext>(providerSymbol, {
+provide<AnimatedMarkdownContext>(providerSymbol, {
   seperator: props.seperator,
   transition: props.transition
 })
