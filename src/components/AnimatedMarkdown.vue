@@ -12,6 +12,7 @@ export const providerSymbol = Symbol('animate-markdown')
 <script setup lang='ts'>
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
+import remarkGfm from 'remark-gfm'
 import { unified } from 'unified'
 import { removePosition } from 'unist-util-remove-position'
 import { provide, shallowRef, watch } from 'vue'
@@ -31,6 +32,7 @@ defineOptions({
 
 const processor = unified()
   .use(remarkParse)
+  .use(remarkGfm)
   .use(remarkRehype, { allowDangerousHtml: true })
 
 async function transformAst(input: string) {

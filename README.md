@@ -4,7 +4,7 @@ Vue component to render animated markdown for LLM text streaming
 
 ## Installation
 ```
-npm install unified unist-util-remove-position remark-rehype remark-parse vue-animated-markdown
+npm install vue-animated-markdown
 ```
 
 ## Usage
