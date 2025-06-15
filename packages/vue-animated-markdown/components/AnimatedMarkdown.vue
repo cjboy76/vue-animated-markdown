@@ -25,11 +25,10 @@ defineOptions({
 
 const props = withDefaults(defineProps<{
   content: string
+  transition: string
   seperator?: Seperator
-  transition?: string
 }>(), {
   seperator: 'word',
-  transition: '',
 })
 
 const processor = unified()

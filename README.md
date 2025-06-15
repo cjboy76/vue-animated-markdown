@@ -1,6 +1,6 @@
 # vue-animated-markdown
 
-Vue component to render animated markdown for LLM text streaming with fully customized animations
+Vue component to render animated markdown for LLM text streaming with fully customized transitions
 
 ## Demo
 
@@ -26,6 +26,7 @@ npm install vue-animated-markdown
 </template>
 
 <style scoped>
+/* Make your own transition here! */
 :deep(.fade-in-enter-active) {
   transition: all 1s ease;
 }
@@ -44,5 +45,13 @@ npm install vue-animated-markdown
 | Prop       | Type                        | Default   | Description                                                                                           |
 |------------|----------------------------|-----------|-------------------------------------------------------------------------------------------------------|
 | content    | `string`                   | —         | The markdown string to render and animate.                                                            |
+| transition | `string`                   | —      |The name of a Vue transition to apply to each animated token for custom animation effects.  |
 | seperator  | `'word'` \| `'character'`  | `'word'`  | Determines the animation granularity: split and animate by word or by character.                      |
-| transition | `string`                   | `''`      | Optional. The name of a Vue transition to apply to each animated token for custom animation effects.  |
+
+## Contributing
+
+Contributions are welcome! Please open issues or pull requests for bug fixes, improvements, or new features.
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).
