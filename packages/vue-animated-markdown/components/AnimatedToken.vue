@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import type { Nodes } from 'hast'
 import { computed, inject } from 'vue'
-import { type AnimatedMarkdownContext, providerSymbol } from './AnimatedMarkdown.vue'
+import { type AnimatedMarkdownContext, AnimatedMarkdownProviderKey } from './AnimatedMarkdown.vue'
 
 type Props = {
   data: Nodes | undefined
@@ -12,7 +12,7 @@ defineOptions({
 })
 
 const props = defineProps<Props>()
-const context = inject<AnimatedMarkdownContext>(providerSymbol)
+const context = inject<AnimatedMarkdownContext>(AnimatedMarkdownProviderKey)
 const splitTexts = computed(() => {
   if (!props.data || props.data.type !== 'text')
     return []
