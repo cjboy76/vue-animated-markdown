@@ -59,7 +59,12 @@ Find good plugins here: [remark plugins](https://github.com/remarkjs/remark/blob
 
 <template>
   <div>
-    <AnimatedMarkdown :content="content" seperator="word" transition="fade-in" :remark-plugins='remarkPlugins' />
+    <AnimatedMarkdown 
+      :content="content" 
+      seperator="word" 
+      transition="fade-in" 
+      :remark-plugins='remarkPlugins' 
+    />
   </div>
 </template>
 ```
