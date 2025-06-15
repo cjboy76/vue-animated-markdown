@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { AnimatedMarkdown } from 'vue-animated-markdown'
 
-const markdownText = `# My Markdown Example
+const markdownText = `# Vue Animated Markdown
 
 This is a sample Markdown content.
 
