@@ -10,6 +10,9 @@ importers:
 
   packages/playground:
     dependencies:
+      remark-gfm:
+        specifier: ^4.0.1
+        version: 4.0.1
       vue:
         specifier: ^3.5.13
         version: 3.5.16(typescript@5.8.3)
@@ -38,9 +41,6 @@ importers:
       '@types/hast':
         specifier: ^3.0.4
         version: 3.0.4
-      remark-gfm:
-        specifier: ^4.0.1
-        version: 4.0.1
       remark-parse:
         specifier: ^11.0.0
         version: 11.0.0

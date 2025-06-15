@@ -1,38 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { AnimatedMarkdown } from 'vue-animated-markdown'
+import remarkGfm from 'remark-gfm'
+import { text } from './text'
 
-const markdownText = `# Vue Animated Markdown
-
-This is a sample Markdown content.
-
-## Subtitle
-
-- Item one
-- Item two
-- Item three
-
-1. First point
-2. Second point
-3. Third point
-
-This is **bold text**, and this is *italic text*.
-
-[This is a link to Google](https://www.google.com)
-
-![This is an image](https://via.placeholder.com/150)
-
-> This is a blockquote.
-
----
-
-That's a basic example of Markdown syntax.
-`
-
+const markdownText = text
 const splited = markdownText.split('')
 const content = ref('')
 let index = 0
-
 const interval = setInterval(() => {
   content.value += splited[index]
   index++
@@ -42,11 +17,13 @@ const interval = setInterval(() => {
     content.value += '\n'
   }
 }, 10)
+
+const remarkPlugins = [remarkGfm]
 </script>
 
 <template>
   <div>
-    <AnimatedMarkdown :content="content" seperator="word" transition="fade-in" />
+    <AnimatedMarkdown :content="content" seperator="word" transition="fade-in" :remark-plugins='remarkPlugins' />
   </div>
 </template>
 
