@@ -77,6 +77,11 @@ Find good plugins here: [remark plugins](https://github.com/remarkjs/remark/blob
 | rehypePlugins      | `PluggableList`           | `[]`    | Array of rehype plugins to transform HTML.                                       |
 | remarkRehypeOptions| `Options`                 | `{}`    | Options to pass to remark-rehype during markdown to HTML transformation.         |
 
+## TODO
+
+- [ ] **Avoid Re-rendering** - Implement optimization to prevent unnecessary re-renders during animation
+- [ ] **Custom HTML Components** - Add support for custom Vue components in markdown content
+
 ## Contributing
 
 Contributions are welcome! Please open issues or pull requests for bug fixes, improvements, or new features.
