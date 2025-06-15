@@ -1,33 +1,37 @@
 <script lang='ts'>
 type Seperator = 'word' | 'character'
 
-export type AnimatedMarkdownContext = {
+export interface AnimatedMarkdownContext {
   seperator: Seperator
   transition: string
 }
 
-export const providerSymbol = Symbol('animate-markdown') 
+export const providerSymbol = Symbol('animate-markdown')
 </script>
 
 <script setup lang='ts'>
+import type { Nodes } from 'hast'
+import remarkGfm from 'remark-gfm'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
-import remarkGfm from 'remark-gfm'
 import { unified } from 'unified'
 import { removePosition } from 'unist-util-remove-position'
 import { provide, shallowRef, watch } from 'vue'
-import type { Nodes } from 'hast'
 import AnimateToken from './AnimatedToken.vue'
 
-
-type Props = {
-  content: string,
+interface Props {
+  content: string
   seperator?: Seperator
-  transition: string
+  transition?: string
 }
 
 defineOptions({
-  name: 'AnimateMarkdown'
+  name: 'AnimateMarkdown',
+})
+
+const props = withDefaults(defineProps<Props>(), {
+  seperator: 'word',
+  transition: '',
 })
 
 const processor = unified()
@@ -42,14 +46,9 @@ async function transformAst(input: string) {
   return tree
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  seperator: 'word',
-  transition: ''
-})
-
 provide<AnimatedMarkdownContext>(providerSymbol, {
   seperator: props.seperator,
-  transition: props.transition
+  transition: props.transition,
 })
 
 const root = shallowRef<Nodes>()
@@ -61,6 +60,6 @@ watch(() => props.content, async (content) => {
 
 <template>
   <div>
-    <AnimateToken :data='root' />
+    <AnimateToken :data="root" />
   </div>
 </template>
