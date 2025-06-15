@@ -1,5 +1,7 @@
 export const text = `# vue-animated-markdown
 
+[GitHub](https://github.com/cjboy76/vue-animated-markdown)
+
 Vue component to render animated markdown for LLM text streaming with fully customized transitions
 
 ## Demo

@@ -30,7 +30,7 @@ const splitTexts = computed(() => {
     </TransitionGroup>
   </template>
   <template v-else-if="data.type === 'element' || data.type === 'root'">
-    <TransitionGroup :tag="data.type === 'root' ? 'div' : data.tagName" :name="context?.transition">
+    <TransitionGroup :tag="data.type === 'root' ? 'div' : data.tagName" :name="context?.transition" v-bind="data.type === 'root' ? {} : data.properties">
       <AnimateToken v-for="(child, index) of data.children" :key="index" :data="child" />
     </TransitionGroup>
   </template>
