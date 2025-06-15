@@ -3,7 +3,7 @@ import type { Nodes } from 'hast'
 import { computed, inject } from 'vue'
 import { type AnimatedMarkdownContext, providerSymbol } from './AnimatedMarkdown.vue'
 
-interface Props {
+type Props = {
   data: Nodes | undefined
 }
 

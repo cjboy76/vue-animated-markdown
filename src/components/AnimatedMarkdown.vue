@@ -1,7 +1,7 @@
 <script lang='ts'>
 type Seperator = 'word' | 'character'
 
-export interface AnimatedMarkdownContext {
+export type AnimatedMarkdownContext = {
   seperator: Seperator
   transition: string
 }
@@ -19,17 +19,15 @@ import { removePosition } from 'unist-util-remove-position'
 import { provide, shallowRef, watch } from 'vue'
 import AnimateToken from './AnimatedToken.vue'
 
-interface Props {
-  content: string
-  seperator?: Seperator
-  transition?: string
-}
-
 defineOptions({
   name: 'AnimateMarkdown',
 })
 
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<{
+  content: string
+  seperator?: Seperator
+  transition?: string
+}>(), {
   seperator: 'word',
   transition: '',
 })
