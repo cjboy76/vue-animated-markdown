@@ -64,7 +64,7 @@ Find good plugins here: [remark plugins](https://github.com/remarkjs/remark/blob
 </template>
 ```
 
-## AnimatedMarkdown Component
+## `<AnimatedMarkdown />` Component
 
 ### Props
 
