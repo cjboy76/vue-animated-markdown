@@ -17,19 +17,18 @@ npm install vue-animated-markdown
 
 <template>
   <div>
-    <AnimatedMarkdown content="# Hello World" transition="fade-in" />
+    <AnimatedMarkdown content="# Hello World" seperator="word" transition="fade-in" />
   </div>
 </template>
 
 <style scoped>
-  .fade-in-move,
-  .fade-in-enter-active {
-    transition: all 0.1s ease;
-  }
+:deep(.fade-in-enter-active) {
+  transition: all 1s ease;
+}
 
-  .fade-in-enter-from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
+:deep(.fade-in-enter-from) {
+  opacity: 0;
+  transform: translateY(10px);
+}
 </style>
 ```

@@ -10,7 +10,7 @@ export default defineConfig({
   plugins: [vue(), dts({ tsconfigPath: './tsconfig.app.json' })],
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: resolve(__dirname, 'index.ts'),
       name: 'VueAnimatedMarkdown',
       // the proper extensions will be added
       fileName: 'vue-animated-markdown',

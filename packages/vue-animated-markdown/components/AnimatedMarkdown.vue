@@ -6,7 +6,7 @@ export type AnimatedMarkdownContext = {
   transition: string
 }
 
-export const providerSymbol = Symbol('animate-markdown')
+export const providerSymbol = Symbol('animated-markdown')
 </script>
 
 <script setup lang='ts'>
@@ -53,6 +53,8 @@ const root = shallowRef<Nodes>()
 
 watch(() => props.content, async (content) => {
   root.value = content ? await transformAst(content) : undefined
+}, {
+  immediate: true,
 })
 </script>
 
