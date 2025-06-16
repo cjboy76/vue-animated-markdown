@@ -16,7 +16,7 @@ import remarkRehype, { type Options } from 'remark-rehype'
 import { type PluggableList, unified } from 'unified'
 import { removePosition } from 'unist-util-remove-position'
 import { provide, shallowRef, watch } from 'vue'
-import AnimateToken from './AnimatedToken.vue'
+import AnimatedContent from './AnimatedContent.vue'
 
 defineOptions({
   name: 'AnimateMarkdown',
@@ -62,6 +62,6 @@ watch(() => props.content, async (content) => {
 
 <template>
   <div>
-    <AnimateToken :data="root" />
+    <AnimatedContent :data="root" />
   </div>
 </template>
