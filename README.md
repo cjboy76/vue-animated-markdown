@@ -10,7 +10,7 @@ Visit demo: [demo link](https://cjboy76.github.io/vue-animated-markdown/)
 
 - 🎭 **Text Animation** - Animate markdown content by word or character
 - 🔌 **Plugin System** - Supports remark and rehype plugins for markdown processing
-- ⚡️ **Vue Transitions** - Uses Vue's built-in transition system for smooth animations
+- ⚡️ **Vue Transitions** - Uses Vue's built-in transition system for smooth animations and allows custom transitions
 
 ## Installation
 
