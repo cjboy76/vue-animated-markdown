@@ -18,11 +18,10 @@ const splitText = computed(() => {
   if (!props.data || props.data.type !== 'text')
     return []
   const seperator = context?.seperator || 'word'
-  const splitRegex = seperator === 'word' ? /(\s+)/ : /(.)/
+  const splitRegex = seperator === 'word' ? /(\s+)/ : ''
   return props.data.value.split('\n').map((line) => {
     return {
-      line,
-      children: line.split(splitRegex),
+      children: line.split(splitRegex).filter(Boolean),
     }
   })
 })
