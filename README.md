@@ -69,6 +69,58 @@ Find good plugins here: [remark plugins](https://github.com/remarkjs/remark/blob
 </template>
 ```
 
+## Usage with custom Vue components and rendering raw HTML in markdown
+
+To use custom Vue components or render raw HTML elements within your markdown, follow these steps:
+
+1. **Globally register your custom component in `main.ts`:**
+
+```typescript
+// main.ts
+import { createApp } from 'vue'
+import App from './App.vue'
+import CustomComponent from './CustomComponent.vue'
+
+const app = createApp(App)
+app.component('CustomComponent', CustomComponent) // Register your custom component globally
+app.mount('#app')
+```
+
+2. **Enable raw HTML and custom components in markdown:**
+
+Install `rehype-raw` and configure the `remarkRehypeOptions` to safely render HTML elements and custom Vue components in your markdown content.
+
+```html
+<script setup lang="ts">
+  import remarkGfm from 'remark-gfm'
+  import { AnimatedMarkdown } from 'vue-animated-markdown'
+  import rehypeRaw from 'rehype-raw'
+
+  // Example markdown content with a custom component and HTML element
+  const content = 'this is <custom-component /> <h1>this is h1 element</h1>'
+  const remarkPlugins = [remarkGfm] // Enables GitHub Flavored Markdown
+  const rehypePlugins = [rehypeRaw] // Allows rendering raw HTML and custom components
+  const remarkRehypeOptions = { allowDangerousHtml: true } // Enables HTML in markdown
+</script>
+
+<template>
+  <div>
+    <AnimatedMarkdown 
+      :content="content" 
+      seperator="word" 
+      transition="fade-in" 
+      :remark-plugins="remarkPlugins" 
+      :rehype-plugins="rehypePlugins"
+      :remark-rehype-options="remarkRehypeOptions"
+    />
+  </div>
+</template>
+```
+
+**Note:**
+- Register all custom components globally to ensure they are recognized inside markdown content.
+- Using `rehype-raw` and `allowDangerousHtml: true` allows rendering raw HTML and Vue components, but be cautious of potential XSS risks if rendering untrusted content.
+
 ## `<AnimatedMarkdown />` Component
 
 ### Props
@@ -84,7 +136,7 @@ Find good plugins here: [remark plugins](https://github.com/remarkjs/remark/blob
 
 ## TODO
 
-- [ ] **Custom HTML Components** - Add support for custom Vue components in markdown content
+- [x] **Custom HTML Components** - Add support for custom Vue components in markdown content
 
 ## Contributing
 
