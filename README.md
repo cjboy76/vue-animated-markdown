@@ -82,7 +82,7 @@ import App from './App.vue'
 import CustomComponent from './CustomComponent.vue'
 
 const app = createApp(App)
-app.component('CustomComponent', CustomComponent) // Register your custom component globally
+app.component('CustomComponent', CustomComponent)
 app.mount('#app')
 ```
 
@@ -96,11 +96,10 @@ Install `rehype-raw` and configure the `remarkRehypeOptions` to safely render HT
   import { AnimatedMarkdown } from 'vue-animated-markdown'
   import rehypeRaw from 'rehype-raw'
 
-  // Example markdown content with a custom component and HTML element
   const content = 'this is <custom-component /> <h1>this is h1 element</h1>'
-  const remarkPlugins = [remarkGfm] // Enables GitHub Flavored Markdown
-  const rehypePlugins = [rehypeRaw] // Allows rendering raw HTML and custom components
-  const remarkRehypeOptions = { allowDangerousHtml: true } // Enables HTML in markdown
+  const remarkPlugins = [remarkGfm]
+  const rehypePlugins = [rehypeRaw]
+  const remarkRehypeOptions = { allowDangerousHtml: true }
 </script>
 
 <template>
