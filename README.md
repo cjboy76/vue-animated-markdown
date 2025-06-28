@@ -84,7 +84,6 @@ Find good plugins here: [remark plugins](https://github.com/remarkjs/remark/blob
 
 ## TODO
 
-- [ ] **Avoid Re-rendering** - Implement optimization to prevent unnecessary re-renders during animation
 - [ ] **Custom HTML Components** - Add support for custom Vue components in markdown content
 
 ## Contributing
