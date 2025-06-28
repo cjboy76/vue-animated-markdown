@@ -1,4 +1,7 @@
-export const text = `# vue-animated-markdown
+export const text = `
+# vue animated markdown
+
+<custom-component></custom-component>
 
 [GitHub](https://github.com/cjboy76/vue-animated-markdown)
 

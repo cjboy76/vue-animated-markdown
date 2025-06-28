@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { AnimatedMarkdown } from 'vue-animated-markdown'
 import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 import { text } from './text'
 
 const markdownText = text
@@ -19,11 +20,13 @@ const interval = setInterval(() => {
 }, 10)
 
 const remarkPlugins = [remarkGfm]
+const rehypePlugins = [rehypeRaw]
 </script>
 
 <template>
   <div>
-    <AnimatedMarkdown :content="content" seperator="word" transition="fade-in" :remark-plugins='remarkPlugins' />
+    <AnimatedMarkdown :content="content" seperator="word" transition="fade-in" :remark-plugins='remarkPlugins'
+      :rehype-plugins='rehypePlugins' />
   </div>
 </template>
 
