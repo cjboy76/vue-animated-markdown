@@ -36,7 +36,7 @@ const props = withDefaults(defineProps<{
 const processor = unified()
   .use(remarkParse)
   .use(props.remarkPlugins || [])
-  .use(remarkRehype, { ...(props.remarkRehypeOptions || { allowDangerousHtml: true }) })
+  .use(remarkRehype, { ...(props.remarkRehypeOptions || {}) })
   .use(props.rehypePlugins || [])
 
 async function transformAst(input: string) {
