@@ -21,12 +21,13 @@ const interval = setInterval(() => {
 
 const remarkPlugins = [remarkGfm]
 const rehypePlugins = [rehypeRaw]
+const remarkRehypeOptions = { allowDangerousHtml: true } // Enables HTML in markdown
 </script>
 
 <template>
   <div>
     <AnimatedMarkdown :content="content" seperator="word" transition="fade-in" :remark-plugins='remarkPlugins'
-      :rehype-plugins='rehypePlugins' />
+      :rehype-plugins='rehypePlugins' :remarkRehypeOptions='remarkRehypeOptions' />
   </div>
 </template>
 

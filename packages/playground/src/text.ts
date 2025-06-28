@@ -3,6 +3,8 @@ export const text = `
 
 <custom-component></custom-component>
 
+<h1>This is H1 elemenet</h1>
+
 [GitHub](https://github.com/cjboy76/vue-animated-markdown)
 
 Vue component to render animated markdown for LLM text streaming with fully customized transitions
