@@ -1,10 +1,10 @@
 <script lang='ts'>
 type Seperator = 'word' | 'character'
 
-export type AnimatedMarkdownContext = {
+export type AnimatedMarkdownContext = Ref<{
   seperator: Seperator
   transition: string
-}
+}>
 
 export const AnimatedMarkdownProviderKey = Symbol('vue-animated-markdown')
 </script>
@@ -15,7 +15,7 @@ import remarkParse from 'remark-parse'
 import remarkRehype, { type Options } from 'remark-rehype'
 import { type PluggableList, unified } from 'unified'
 import { removePosition } from 'unist-util-remove-position'
-import { provide, shallowRef, watch } from 'vue'
+import { provide, ref, type Ref, shallowRef, watch } from 'vue'
 import AnimatedContent from './AnimatedContent.vue'
 
 defineOptions({
@@ -46,10 +46,21 @@ async function transformAst(input: string) {
   return tree
 }
 
-provide<AnimatedMarkdownContext>(AnimatedMarkdownProviderKey, {
+const context = ref({
   seperator: props.seperator,
   transition: props.transition,
 })
+
+// Watch for prop changes
+watch(() => props.transition, (newTransition) => {
+  context.value.transition = newTransition
+})
+
+watch(() => props.seperator, (newSeperator) => {
+  context.value.seperator = newSeperator
+})
+
+provide<AnimatedMarkdownContext>(AnimatedMarkdownProviderKey, context)
 
 const root = shallowRef<Nodes>()
 
