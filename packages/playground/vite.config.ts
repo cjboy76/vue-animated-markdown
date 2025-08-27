@@ -8,7 +8,7 @@ export default defineConfig({
   base: '/vue-animated-markdown/',
   resolve: {
     alias: {
-      'vue-animated-markdown': resolve(__dirname, '../vue-animated-markdown/index.ts'),
+      'vue-animated-markdown': resolve(__dirname, '../core/index.ts'),
     },
   },
 })

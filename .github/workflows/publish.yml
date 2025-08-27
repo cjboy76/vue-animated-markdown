@@ -35,7 +35,7 @@ jobs:
 
       - name: Publish to NPM
         run: |
-          cd packages/vue-animated-markdown
+          cd packages/core
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
