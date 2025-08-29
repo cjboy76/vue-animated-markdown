@@ -11,6 +11,8 @@ const context = inject<AnimatedMarkdownContext>(AnimatedMarkdownProviderKey)
 
 <template>
   <TransitionGroup tag="div" :name="context?.transition">
-    <span v-for="(item, index) of data" :key="index">{{ item }}</span>
+    <div v-for="(item, index) of data" :key="index" style="display: inline-block; white-space: pre;">
+      {{ item }}
+    </div>
   </TransitionGroup>
 </template>

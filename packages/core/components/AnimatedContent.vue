@@ -17,7 +17,7 @@ const context = inject<AnimatedMarkdownContext>(AnimatedMarkdownProviderKey)
 const splitText = computed(() => {
   if (!props.data || props.data.type !== 'text')
     return []
-  const seperator = context?.seperator || 'word'
+  const seperator = context?.value.seperator || 'word'
   const splitRegex = seperator === 'word' ? /(\s+)/ : ''
   return props.data.value.split('\n').map((line) => {
     return {

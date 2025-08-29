@@ -15,6 +15,7 @@
   },
   "exports": {
     ".": {
+      "development": "./index.ts",
       "types": "./dist/index.d.ts",
       "import": "./dist/vue-animated-markdown.js",
       "require": "./dist/vue-animated-markdown.umd.cjs"
