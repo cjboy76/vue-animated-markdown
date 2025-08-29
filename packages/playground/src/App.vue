@@ -110,12 +110,11 @@ function resetContent() {
 
 /* Fade In - Original */
 :deep(.fade-in-enter-active) {
-  transition: all 1s ease;
+  transition: all 1s ease-out;
 }
 
 :deep(.fade-in-enter-from) {
   opacity: 0;
-  transform: translateY(10px);
 }
 
 /* Slide In Left */
