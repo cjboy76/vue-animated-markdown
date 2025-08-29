@@ -3,9 +3,8 @@ import { ref } from 'vue'
 import { AnimatedMarkdown } from 'vue-animated-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
-import { text } from './text'
+import { default as markdownText } from './text.md?raw'
 
-const markdownText = text
 const splited = markdownText.split('')
 const content = ref('')
 let index = 0

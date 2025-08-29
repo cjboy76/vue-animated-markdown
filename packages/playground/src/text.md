@@ -1,4 +1,3 @@
-export const text = `
 # vue animated markdown
 
 <custom-component></custom-component>
@@ -15,13 +14,13 @@ Visit demo: [demo link](https://cjboy76.github.io/vue-animated-markdown/)
 
 ## Installation
 
-\`\`\`
+```
 npm install vue-animated-markdown
-\`\`\`
+```
 
 ## Usage
 
-\`\`\`html
+```html
 <script setup lang="ts">
   import { AnimatedMarkdown } from 'vue-animated-markdown'
 <\/script>
@@ -43,7 +42,7 @@ npm install vue-animated-markdown
   transform: translateY(10px);
 }
 </style>
-\`\`\`
+```
 
 ## AnimatedMarkdown Component
 
@@ -51,7 +50,6 @@ npm install vue-animated-markdown
 
 | Prop       | Type                        | Default   | Description                                                                                           |
 |------------|----------------------------|-----------|-------------------------------------------------------------------------------------------------------|
-| content    | \`string\`                   | —         | The markdown string to render and animate.                                                            |
-| transition | \`string\`                   | —      |The name of a Vue transition to apply to each animated token for custom animation effects.  |
-| seperator  | \`'word'\` \\| \`'character'\`  | \`'word'\`  | Determines the animation granularity: split and animate by word or by character.                      |
-`
+| content    | `string`                   | —         | The markdown string to render and animate.                                                            |
+| transition | `string`                   | —      |The name of a Vue transition to apply to each animated token for custom animation effects.  |
+| seperator  | `'word'` | `'character'`  | `'word'\`  | Determines the animation granularity: split and animate by word or by character.|
