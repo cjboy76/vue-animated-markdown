@@ -1,7 +1,5 @@
 # vue-animated-markdown
 
-🚧 It's still under development 🚧
-
 Vue component to render animated markdown for LLM text streaming with fully customized transitions
 
 ## Demo
